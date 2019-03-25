@@ -16,9 +16,9 @@ def validateDate(inputDate):
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    # return render_template('index.html')
-    home = "Check Weather Information using the following Resources: \n/historical/ - GET, POST\n/historical/[date] - GET, DELETE\n/forecast/[date] - GET\n"
-    return home
+    return render_template('index.html')
+    # home = "Check Weather Information using the following Resources: \n/historical/ - GET, POST\n/historical/[date] - GET, DELETE\n/forecast/[date] - GET\n"
+    # return home
 
 @app.route('/historical/', methods=['GET'])
 def getAvaliableHistoricalData():
