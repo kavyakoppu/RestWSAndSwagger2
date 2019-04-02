@@ -29,21 +29,21 @@ This can be fetched from Description tab of Instances screen in EC2 console.
 #### [/historical/] - GET  
 It will fetch all the dates for which weather information is available. This doesnot need any input parameter.  
 It will return JSON Array of each and every date in YYYYMMDD format with 200 OK status.  
+#### [/historical/`date`] - GET  
+We need to pass date parameter in YYYYMMDD format. It will fetch that particular weather information if available in JSON array with 200 OK status. Else if data is not available, it will return 404 error code.  
 #### [/historical/] - POST  
 This is used to add or update the weather information for any particular date.  
 We need to pass the data to be updated in request body in JSON format.  
 i.e, by selecting Content-Type as application/json  
 on success, it returns - JSON array with date added/updated with 201 Created statuscode.  
-#### [/historical/`date`] - GET  
-We need to pass date parameter in YYYYMMDD format. It will fetch that particular weather information if available in JSON array with 200 OK status. Else if data is not available, it will return 404 error code.
-#### [/historical/`date`] - DELETE
-We need to pass date parameter in YYYYMMDD format. It will delete that particular weather information if available and returns 204 status. Else if data is not available, it will return 404 error code.
-#### [/forecast/`date`] - GET
-We need to pass date parameter in YYYYMMDD format. It will forecast weather for that particular week based on previous year's data with 200 status.
+#### [/historical/`date`] - DELETE  
+We need to pass date parameter in YYYYMMDD format. It will delete that particular weather information if available and returns 204 status. Else if data is not available, it will return 404 error code.  
+#### [/forecast/`date`] - GET  
+We need to pass date parameter in YYYYMMDD format. It will forecast weather for that particular week based on previous year's data with 200 status.  
 
 ### Sample Requests and Responses  
 
-* GET - [http://myweatherapp.com/historical/]
+* GET - [http://myweatherapp.com/historical/]  
   * RESPONSE -  
     [  
     {"DATE": "20130101"},  
@@ -52,10 +52,10 @@ We need to pass date parameter in YYYYMMDD format. It will forecast weather for 
      ...  
      {"DATE": "20190327"}  
      ]  
-     200 OK
+     200 OK  
 
-* GET - [http://myweatherapp.com/historical/20190327/]
-  * RESPONSE -  
+* GET - [http://myweatherapp.com/historical/20190327/]  
+  * RESPONSE -   
     {  
         "DATE": "20190327",  
         "TMAX": "90.7",  
@@ -67,7 +67,7 @@ We need to pass date parameter in YYYYMMDD format. It will forecast weather for 
   * RESPONSE -  
   404 Data Not Found  
   
-* POST - [http://myweatherapp.com/historical/]
+* POST - [http://myweatherapp.com/historical/]  
   * REQUEST DATA (Content-Type:application/json) -  
     {  
         "DATE": "20190328",  
