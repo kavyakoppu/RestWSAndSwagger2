@@ -127,3 +127,6 @@ We need to pass date parameter in YYYYMMDD format. It will forecast weather for 
         }  
     ]  
     200 OK  
+    
+### Swagger UI Documentation  
+[https://app.swaggerhub.com/apis-docs/koppuka/weather-forecast_rest_api_swagger/0.0.0]
